@@ -89,7 +89,7 @@ public class CityListTest {
     }
 
     @Test
-    public void testGetCities()//-----RS
+    public void testGetCities()
     {
         CityList cityList = mockCityList();
         assertEquals(0, mockCity().compareTo(cityList.getCities(1).get(0)));
@@ -102,7 +102,7 @@ public class CityListTest {
     }
 
     @Test
-    public void testSortedCities()
+    public void testSortedCities()//--RS
     {
         CityList cityList = new CityList();
         City c1= new City("AA", "ZZ");
