@@ -75,5 +75,32 @@ public class MainActivityTest {
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(0).perform(click()); //Check the content on the list - no content in this case
         Espresso.pressBack(); //Back button
     }
+    @Test
+    public void assigment3test(){
+        onView(withId(R.id.button_add)).perform(click());// clicking add button
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Dhaka"));// typing in edittext
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click());// confirming Dhaka as city
+        onView(withText("Dhaka")).check(matches(isDisplayed()));// Dhaka displayed or not checking
 
+        onView(withId(R.id.button_add)).perform(click());// clicking add button
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Rajshahi"));
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click());
+        onView(withText("Rajshahi")).check(matches(isDisplayed()));
+
+        onView(withId(R.id.button_add)).perform(click());// clicking add button
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Khulna"));
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click());
+        onView(withText("Khulna")).check(matches(isDisplayed()));
+
+        onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(1).perform(click()); // clicking position 1 of list
+        onView(withId(R.id.show)).check(matches(isDisplayed()));// show activity viewed or not
+
+        onView(withText("Rajshahi")).check(matches(isDisplayed()));// Rajshahi viewed on show activity or not
+
+        onView(withId(R.id.back)).perform(click()); // pressing back button
+        onView(withId(R.id.main)).check(matches(isDisplayed()));// MainActivity viewed or not
+    }
 }
