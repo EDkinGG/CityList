@@ -18,14 +18,15 @@ public class showActivity extends AppCompatActivity {
         Intent intent= getIntent();
         String s=intent.getStringExtra("cityname");
         TextView t=findViewById(R.id.textView);
-        //Toast.makeText(showActivity.this,s,Toast.LENGTH_SHORT).show();
+
         t.setText(s);
         Button b=findViewById(R.id.back);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(showActivity.this,MainActivity.class);
-                startActivity(i);
+//                Intent i=new Intent(showActivity.this,MainActivity.class);
+//                startActivity(i);
+                finish();
             }
         });
 
